@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Patients</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+    <p></p>
+    <form id="searchForm">
+        <input type="text" id="searchInput" name="searchInput">
+        <input class="btn" type="submit" value="Search">
+    </form>
+    
+    <form id="filterForm">
+        <label for="clinicFilter">Filter by Clinic:</label>
+        <select id="clinicFilter" name="clinicFilter">
+            <option value="">All Clinics</option>
+            <option value="Evergreen">Evergreen</option>
+            <option value="Rainier">Rainier</option>
+        </select>
+        
+        <label for="diagnosisFilter">Filter by Diagnosis:</label>
+        <select id="diagnosisFilter" name="diagnosisFilter">
+            <option value="">All Diagnoses</option>
+            <option value="Rhinovirus">Rhinovirus</option>
+            <option value="Allergic Reaction">Allergic Reaction</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="No Diagnosis">No Diagnosis</option>
+        </select>
+        
+        <input class="btn" type="submit" value="Apply Filters">
+    </form>
+    <p></p>
+    
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>patient_ID</th>
+            <th>patient_name</th>
+            <th>date_of_birth</th>
+            <th>patient_phone_number</th>
+            <th>diagnosis_ID</th>
+            <th>clinic_ID</th>
+            <th>procedure_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editPatient(999)">Edit</button></td>
+            <td><button onclick="deletePatient(999)">Delete</button></td>
+            <td>999</td>
+            <td>Hasselhoff, Lam</td>
+            <td>1995-11-15</td>
+            <td>2062434484</td>
+            <td>Rhinovirus</td>
+            <td>Evergreen</td>
+            <td>Check Up</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatient(1000)">Edit</button></td>
+            <td><button onclick="deletePatient(1000)">Delete</button></td>
+            <td>1000</td>
+            <td>Steel, Rick</td>
+            <td>2003-05-28</td>
+            <td>4256619092</td>
+            <td>Allergic Reaction</td>
+            <td>Rainier</td>
+            <td>Vaccincations</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatient(1002)">Edit</button></td>
+            <td><button onclick="deletePatient(1002)">Delete</button></td>
+            <td>1002</td>
+            <td>Ross, Bobby</td>
+            <td>1965-01-10</td>
+            <td>3609910909</td>
+            <td>No Diagnosis</td>
+            <td>Rainier</td>
+            <td>Check Up</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatient(1004)">Edit</button></td>
+            <td><button onclick="deletePatient(1004)">Delete</button></td>
+            <td>1004</td>
+            <td>Packer, Michelle</td>
+            <td>1980-03-11</td>
+            <td>2067890943</td>
+            <td>Diabetes</td>
+            <td>Evergreen</td>
+            <td>Physical Therapy</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+<div id="insert" style="display: block">
+    <form id="addPatient">
+        <legend><strong>Add Patient</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Patient Name </label> <input type="text" name="patient_name">
+            <label> Date of Birth </label> <input type="text" name="date_of_birth">
+            <label> Phone Number </label> <input type="text" name="phone_number">
+            <label> Diagnosis </label> <input type="text" name="diagnosis">
+            <label> Clinic </label> <input type="text" name="clinic">
+            <label> Procedure </label> <input type="text" name="procedure">
+        </fieldset>
+        <input class="btn" type="submit" id="addClinic" value="Add Clinic">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new patient-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updatePatient">
+        <legend><strong>Update Patient</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+        <label>ID: </label> 1000
+            <label> Patient Name </label> <input type="text" name="patient_name" value="Steel, Rick">
+            <label> Date of Birth </label> <input type="text" name="date_of_birth" value="2003-05-28">
+            <label> Phone Number </label> <input type="text" name="phone_number" value="9496651111">
+            <label> Diagnosis </label> <input type="text" name="diagnosis" value="Allergic reaction">
+            <label> Clinic </label> <input type="text" name="clinic" value="Rainier">
+            <label> Procedure </label> <input type="text" name="procedure" value="Vaccinations">
+        </fieldset>
+        <input class="btn" type="submit" id="UpdateNewPatient" value="Update Patient">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update patient-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deletePatient">
+        <legend><strong>Delete Patient</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete:</p>
+            <label>ID:</label> 1002
+              <label> Patient Name </label> <b>Ross, Bobby</b>
+              
+      </fieldset>
+      <input class="btn" type="submit" id="DeletePatient" value="Delete Patient">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+</body>
+</html>

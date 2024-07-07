@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnoses</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Diagnoses</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+
+<p></p> <!-- Insert header if you want-->
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>diagnosis_ID</th>
+            <th>disease_name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editDiagnosis(40)">Edit</button></td>
+            <td><button onclick="deleteDiagnosis(40)">Delete</button></td>
+            <td>40</td>
+            <td>Rhinovirus</td>
+        </tr>
+        <tr>
+            <td><button onclick="editDiagnosis(41)">Edit</button></td>
+            <td><button onclick="deleteDiagnosis(41)">Delete</button></td>
+            <td>41</td>
+            <td>Allergic Reaction</td>
+        </tr>
+        <tr>
+            <td><button onclick="editDiagnosis(42)">Edit</button></td>
+            <td><button onclick="deleteDiagnosis(42)">Delete</button></td>
+            <td>42</td>
+            <td>Diabetes</td>
+        </tr>
+        <tr>
+            <td><button onclick="editDiagnosis(0)">Edit</button></td>
+            <td><button onclick="deleteDiagnosis(0)">Delete</button></td>
+            <td>0</td>
+            <td>No Diagnosis</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+<div id="insert" style="display: block">
+    <form id="addDiagnosis">
+        <legend><strong>Add Diagnosis</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Diagnosis Name </label> <input type="text" name="diagnosis_name">
+        </fieldset>
+        <input class="btn" type="submit" id="addDiagnosis" value="Add Diagnosis">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new diagnosis-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updateDiagnosis">
+        <legend><strong>Update Diagnosis</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+        <label>ID: </label> 42
+            <label> Diagnosis Name </label> <input type="text" name="diagnosis_name" value="General Inflammation">
+        </fieldset>
+        <input class="btn" type="submit" id="updateDiagnosis" value="Update Diagnosis">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update diagnosis-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deleteDiagnosis">
+        <legend><strong>Delete Diagnosis</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete:</p>
+            <label>ID:</label> 42
+              <label> Diagnosis Name </label> <b>Diabetes</b>
+              
+      </fieldset>
+      <input class="btn" type="submit" id="DeleteDiagnosis" value="Delete Diasgnosis">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+
+</body>
+</html>

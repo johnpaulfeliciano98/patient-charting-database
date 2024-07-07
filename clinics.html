@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinics</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Clinics</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+
+<p></p> <!-- Insert header if you want-->
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>clinic_ID</th>
+            <th>clinic_name</th>
+            <th>address</th>
+            <th>clinic_phone_number</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editClinic(1)">Edit</button></td>
+            <td><button onclick="deleteClinic(1)">Delete</button></td>
+            <td>1</td>
+            <td>Evergreen</td>
+            <td>123 Fake St, Seattle, WA</td>
+            <td>2064445599</td>
+            <td>evergreen@aol.com</td>
+        </tr>
+        <tr>
+            <td><button onclick="editClinic(2)">Edit</button></td>
+            <td><button onclick="deleteClinic(2)">Delete</button></td>
+            <td>2</td>
+            <td>Rainier</td>
+            <td>467 Sike St, Burien, WA</td>
+            <td>4259998787</td>
+            <td>rainier@hotmail.com</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div><!-- read-->
+
+<div id="insert" style="display: block">
+    <form id="addClinic">
+        <legend><strong>Add Clinic</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Clinic Name </label> <input type="text" name="clinic_name">
+            <label> Address </label> <input type="text" name="address">
+            <label> Phone Number </label> <input type="text" name="phone_number">
+            <label> Email </label> <input type="text" name="email">
+        </fieldset>
+        <input class="btn" type="submit" id="addClinic" value="Add Clinic">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new clinic-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updateClinic">
+        <legend><strong>Update Clinic</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+        <label>ID: </label> 1
+            <label> Clinic Name </label> <input type="text" name="clinic_name" value="Evergreen">
+            <label> Address </label> <input type="text" name="address" value="584 Not Real AVE, Tacoma, WA">
+            <label> Phone Number </label> <input type="text" name="phone_number" value="2064445599">
+            <label> Email </label> <input type="text" name="email" value="evergreen@aol.com">
+        </fieldset>
+        <input class="btn" type="submit" id="UpdateNewClinic" value="Update Clinic">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update clinic-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deleteClinic">
+        <legend><strong>Delete Clinic</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete:</p>
+            <label>ID:</label> 2
+              <label> Clinic Name </label> <b>Rainier</b>
+              
+      </fieldset>
+      <input class="btn" type="submit" id="DeleteClinic" value="Delete Clinic">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+</body>
+</html>

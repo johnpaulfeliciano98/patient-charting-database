@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedures</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Procedures</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+
+<p></p> <!-- Insert header if you want-->
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>procedure_ID</th>
+            <th>procedure_name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editProcedure(10)">Edit</button></td>
+            <td><button onclick="deleteProcedure(10)">Delete</button></td>
+            <td>10</td>
+            <td>Check Up</td>
+        </tr>
+        <tr>
+            <td><button onclick="editProcedure(11)">Edit</button></td>
+            <td><button onclick="deleteProcedure(11)">Delete</button></td>
+            <td>11</td>
+            <td>Vaccinations</td>
+        </tr>
+        <tr>
+            <td><button onclick="editProcedure(12)">Edit</button></td>
+            <td><button onclick="deleteProcedure(12)">Delete</button></td>
+            <td>12</td>
+            <td>Physical Therapy</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+
+<div id="insert" style="display: block">
+    <form id="addProcedure">
+        <legend><strong>Add Procedure</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Procedure Name </label> <input type="text" name="procedure_name">
+        </fieldset>
+        <input class="btn" type="submit" id="addProcedure" value="Add Procedure">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new procedure-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updateProcedure">
+        <legend><strong>Update Procedure</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+        <label>ID: </label> 12
+            <label> Procedure Name </label> <input type="text" name="procedure_name" value="Colonoscopy">
+        </fieldset>
+        <input class="btn" type="submit" id="updateProcedure" value="Update Procedure">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update procedure-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deleteProcedure">
+        <legend><strong>Delete Procedure</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete:</p>
+            <label>ID:</label> 11
+              <label> Procedure Name </label> <b>Vaccincations</b>
+              
+      </fieldset>
+      <input class="btn" type="submit" id="DeleteProcedure" value="Delete Procedure">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+</body>
+</html>

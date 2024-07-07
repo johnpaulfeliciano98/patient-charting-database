@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Doctors</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+
+<p></p> <!-- Insert header if you want-->
+    
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>doctor_ID</th>
+            <th>doctor_name</th>
+            <th>clinic_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editDoctor(256)">Edit</button></td>
+            <td><button onclick="deleteDoctor(256)">Delete</button></td>
+            <td>256</td>
+            <td>Dr. Lawrence</td>
+            <td>Evergreen</td>
+        </tr>
+        <tr>
+            <td><button onclick="editDoctor(678)">Edit</button></td>
+            <td><button onclick="deleteDoctor(678)">Delete</button></td>
+            <td>678</td>
+            <td>Dr. Timothy</td>
+            <td>Evergreen</td>
+        </tr>
+        <tr>
+            <td><button onclick="editDoctor(901)">Edit</button></td>
+            <td><button onclick="deleteDoctor(901)">Delete</button></td>
+            <td>901</td>
+            <td>Dr. Larry</td>
+            <td>Rainier</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+<div id="insert" style="display: block">
+    <form id="addDoctor">
+        <legend><strong>Add Doctor</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Doctor Name </label> <input type="text" name="doctor_name">
+            <label> Clinic </label> <input type="text" name="clinic">
+        </fieldset>
+        <input class="btn" type="submit" id="addDoctor" value="Add Doctor">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new doctor-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updateDoctor">
+        <legend><strong>Update Patient</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label>ID: </label> 256
+            <label> Doctor Name </label> <input type="text" name="doctor_name" value="Dr. Lawrence">
+            <label> Clinic </label> <input type="text" name="clinic" value="Rainier">
+        </fieldset>
+        <input class="btn" type="submit" id="UpdateNewDoctor" value="Update Doctor">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update doctor-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deleteDoctor">
+        <legend><strong>Delete Doctor</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete:</p>
+            <label>ID:</label> 901
+              <label> Doctor Name </label> <b>Dr. Larry</b>
+              
+      </fieldset>
+      <input class="btn" type="submit" id="DeleteDoctor" value="Delete Doctor">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+</body>
+</html>

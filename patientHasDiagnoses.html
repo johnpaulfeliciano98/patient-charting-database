@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedures</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        fieldset {
+            border: none;
+        }
+        label {
+            border: none;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Diagnoses Per Patient</h2>
+
+[ <a href="index.html">Home</a> | <a href="clinics.html">Clinics</a> | <a href="patients.html">Patients</a> | <a href="doctors.html">Doctors</a> | <a href="doctorHasPatients.html">Patients Per Doctor</a> | <a href="patientHasDiagnoses.html">Diagnoses Per Patient</a> | <a href="procedures.html">Procedures</a> | <a href="diagnoses.html">Diagnoses</a> ]
+
+<div>
+
+<p></p> <!-- Insert header if you want-->
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>patient_ID</th>
+            <th>diagnoses_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button onclick="editPatientHasDiagnoses(999)">Edit</button></td>
+            <td><button onclick="deletePatientHasDiagnoses(999)">Delete</button></td>
+            <td>999</td>
+            <td>Rhinovirus</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatientHasDiagnoses(1000)">Edit</button></td>
+            <td><button onclick="deletePatientHasDiagnoses(1000)">Delete</button></td>
+            <td>1000</td>
+            <td>Allergic Reaction</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatientHasDiagnoses(1002)">Edit</button></td>
+            <td><button onclick="deletePatientHasDiagnoses(1002)">Delete</button></td>
+            <td>1002</td>
+            <td>No Diagnosis</td>
+        </tr>
+        <tr>
+            <td><button onclick="editPatientHasDiagnoses(1004)">Edit</button></td>
+            <td><button onclick="deletePatientHasDiagnoses(1004)">Delete</button></td>
+            <td>1004</td>
+            <td>Diabetes</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+
+<div id="insert" style="display: block">
+    <form id="patientHasDiagnoses">
+        <legend><strong>Add Patient/Diagnoses Relationship</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+            <label> Patient ID </label> <input type="text" name="patient_id">
+            <label> Diagnoses ID </label> <input type="text" name="diagnoses_id">
+        </fieldset>
+        <input class="btn" type="submit" id="addPatientHasDiagnoses" value="Add Relationship">
+        <input class="btn" type="button" value="Cancel">
+	</form> <!--add new patient/diagnoses relationship-->
+</div><!-- insert -->
+<p>&nbsp;</p>
+
+<div id="update" style="display: block">
+    <form id="updatePatientHasDiagnoses">
+        <legend><strong>Update Patient/Diagnoses Relationship</strong></legend>
+        <p></p>
+        <fieldset class="fields">
+        <label>Patient ID: </label> 1002
+        <p></p>
+            <label> Diagnoses ID </label> <input type="text" name="diagnoses_id" value="Diabetes">
+        </fieldset>
+        <input class="btn" type="submit" id="updatePatientHasDiagnoses" value="Update Relationship">
+        <input class="btn" type="button" value="Cancel" >
+	</form> <!--update patient/diagnoses relationship-->
+</div><!-- update -->
+<p>&nbsp;</p>
+
+<div id="delete" style="display: block">
+    <form id="deletePatientHasDiagnoses">
+        <legend><strong>Delete Patient/Diagnoses Relationship</strong></legend>
+            <fieldset class="fields">
+            <p>Please confirm that you want to delete the relationship between:</p>
+                <label><b>Patient ID:</b></label> 999
+                <p></p>
+                <label><b>Diagnosis ID:</b></label> Rhinovirus
+              
+              
+      </fieldset>
+      <input class="btn" type="submit" id="deletePatientHasDiagnoses" value="Delete Relationship">
+            <input class="btn" type="button" value="Cancel" >
+    </form> 
+</div><!-- delete -->
+
+</body>
+</html>
